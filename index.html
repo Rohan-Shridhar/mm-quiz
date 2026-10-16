@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marketing Management Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="questions.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-mark">MM<span>·</span>QUIZ</div>
+    <div>
+      <p class="eyebrow">MARKETING MANAGEMENT — I</p>
+      <h1>Practice, one question at a time.</h1>
+      <p class="subhead">Pick your weeks, set your question count, and learn from every answer.</p>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <section class="setup-card" aria-labelledby="setup-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CUSTOM SESSION</p>
+          <h2 id="setup-title">Build your quiz</h2>
+        </div>
+        <span class="source-tag">80 questions · 8 weeks</span>
+      </div>
+
+      <div class="setup-grid">
+        <div class="week-picker">
+          <label class="field-label">Choose one or more weeks</label>
+          <div class="week-actions">
+            <button type="button" class="text-button" id="select-all">Select all</button>
+            <button type="button" class="text-button" id="clear-all">Clear</button>
+          </div>
+          <div class="week-grid" id="week-grid">
+            <label class="week-option"><input type="checkbox" value="1" checked><span>Week 1</span></label>
+            <label class="week-option"><input type="checkbox" value="2" checked><span>Week 2</span></label>
+            <label class="week-option"><input type="checkbox" value="3" checked><span>Week 3</span></label>
+            <label class="week-option"><input type="checkbox" value="4" checked><span>Week 4</span></label>
+            <label class="week-option"><input type="checkbox" value="5" checked><span>Week 5</span></label>
+            <label class="week-option"><input type="checkbox" value="6" checked><span>Week 6</span></label>
+            <label class="week-option"><input type="checkbox" value="7" checked><span>Week 7</span></label>
+            <label class="week-option"><input type="checkbox" value="8" checked><span>Week 8</span></label>
+          </div>
+        </div>
+
+        <div class="count-picker">
+          <label class="field-label" for="question-count">Number of questions</label>
+          <div class="number-control">
+            <button type="button" id="minus-count" aria-label="Decrease question count">−</button>
+            <input id="question-count" type="number" min="1" max="80" value="20" inputmode="numeric">
+            <button type="button" id="plus-count" aria-label="Increase question count">+</button>
+          </div>
+          <p class="helper">Choose between 1 and 80. Questions are shuffled from the selected weeks.</p>
+          <div class="available-count" id="available-count">80 questions available</div>
+        </div>
+      </div>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <button class="primary-button" id="start-quiz" type="button">Start quiz <span aria-hidden="true">↗</span></button>
+    </section>
+
+    <section class="quiz-area" id="quiz-area" hidden>
+      <div class="quiz-topbar">
+        <div>
+          <p class="eyebrow">YOUR PRACTICE SESSION</p>
+          <h2>Keep going. You've got this.</h2>
+        </div>
+        <button type="button" class="reset-button" id="restart-setup">Change quiz</button>
+      </div>
+      <div class="progress-panel">
+        <div class="progress-meta"><span id="progress-label">0 of 20 answered correctly</span><span id="score-label">Score: 0%</span></div>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+      <div id="question-list" class="question-list"></div>
+      <div class="completion-card" id="completion-card" hidden>
+        <div class="completion-icon">✓</div>
+        <p class="eyebrow">SESSION COMPLETE</p>
+        <h2 id="completion-title">Nice work!</h2>
+        <p id="completion-copy"></p>
+        <button type="button" class="primary-button" id="try-again">Build another quiz <span aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+
+    <footer>Built for focused revision · Based on your Week 1–8 assignment PDFs</footer>
+  </main>
+</body>
+</html>
